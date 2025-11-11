@@ -19,5 +19,4 @@ management:
 
 
 digital:
-  url:
-    cards: dg-ms-card
+  test: Hello From Config
