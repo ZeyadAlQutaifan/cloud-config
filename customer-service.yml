@@ -16,3 +16,9 @@ management:
         include: health,info
   health:
       show-details=always
+
+
+digital:
+  url:
+    cards: dg-ms-card
+
