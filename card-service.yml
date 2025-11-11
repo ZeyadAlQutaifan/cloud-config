@@ -19,4 +19,4 @@ management:
     show-details: always
 
 digital:
-  test: Hello
+  test: Hello-test
