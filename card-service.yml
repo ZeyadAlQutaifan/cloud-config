@@ -19,4 +19,5 @@ management:
     show-details: always
 
 digital:
-  test: Hello-test
+  url:
+    cards: dg-ms-card
