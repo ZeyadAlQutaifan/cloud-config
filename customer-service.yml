@@ -21,4 +21,16 @@ digital:
   url:
     cards: dg-ms-card
 
+otel:
+  traces:
+    exporter: otlp
+  metrics:
+    exporter: none
+  resource-attributes:
+    service.name: ${OTEL_SERVICE_NAME}
+  otlp:
+    endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+
+
+
 
