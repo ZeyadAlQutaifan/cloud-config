@@ -6,8 +6,7 @@ server:
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:8761/eureka/
-
+            defaultZone: ${SERVICE_REGISTERY_URL}
 
 management:
   endpoints:
@@ -21,4 +20,5 @@ management:
 digital:
   url:
     cards: dg-ms-card
+
 
