@@ -29,7 +29,4 @@ otel:
       protocol: grpc
 traces:
   sampler:
-    probability: 1.0        
-spring:
-  application:
-    name: demo       
+    probability: 1.0       
