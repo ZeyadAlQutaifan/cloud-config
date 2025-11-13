@@ -6,6 +6,7 @@ application:
 eureka:
   instance:
     app-name: card-service
+    hostname: card-service
     prefer-ip-address: false
     instance-id: ${spring.application.name}:${server.port}
   client:
