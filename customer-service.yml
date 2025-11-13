@@ -14,32 +14,4 @@ logging:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,prometheus
-  tracing:
-    sampling:
-      probability: 1.0
-  otlp:
-    tracing:
-      endpoint: http://localhost:4317
-    logs:
-      endpoint: http://localhost:4317
-  metrics:
-    export:
-      otlp:
-        enabled: true
-        endpoint: http://localhost:4317
-  observations:
-    key-values:
-      service.name: ${spring.application.name}
-      environment: dev
-
-
-
-
-
-
 
