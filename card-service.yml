@@ -4,20 +4,9 @@ server:
 application:
   name: card-service
 eureka:
-  instance:
-    app-name: card-service
-    hostname: card-service
-    prefer-ip-address: false
-    instance-id: ${spring.application.name}:${server.port}
-    statusPageUrl: http://${eureka.instance.hostname}:${server.port}/actuator/info
-    healthCheckUrl: http://${eureka.instance.hostname}:${server.port}/actuator/health
-    homePageUrl: http://${eureka.instance.hostname}:${server.port}/
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: ${SERVICE_REGISTERY_URL}
 
 
 test:
