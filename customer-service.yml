@@ -9,27 +9,23 @@ eureka:
             defaultZone: ${SERVICE_REGISTERY_URL}
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
-  health:
-      show-details=always
-
-
-digital:
-  url:
-    cards: dg-ms-card
-
-otel:
-  traces:
-    exporter: otlp
-  metrics:
-    exporter: none
-  resource-attributes:
-    service.name: ${OTEL_SERVICE_NAME}
+  tracing:
+    sampling:
+      probability: 1.0
   otlp:
-    endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+    tracing:
+      endpoint: http://localhost:4317
+  metrics:
+    export:
+      otlp:
+        enabled: true
+        endpoint: http://localhost:4317
+  observations:
+    key-values:
+      service.name: ${spring.application.name}
+      environment: dev
+
+
 
 
 
