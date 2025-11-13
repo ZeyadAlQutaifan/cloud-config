@@ -1,14 +1,13 @@
+server:
+  port: 8081
 spring:
   application:
     name: card-service
-server:
-    port: 8083
+
 eureka:
-    client:
-        service-url:
-            defaultZone: ${SERVICE_REGISTERY_URL}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
-logging:
-  pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
+test:
+  value: hello
