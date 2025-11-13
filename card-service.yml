@@ -11,3 +11,12 @@ eureka:
 
 test:
   value: hello
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # expose all actuator endpoints
+  endpoint:
+    health:
+      show-details: always   # show full health details
