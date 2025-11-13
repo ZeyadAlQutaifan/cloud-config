@@ -20,13 +20,11 @@ management:
 
 digital:
   test: Hello From Config
-otel:
-  service:
-    name: demo               
-  exporter:
-    otlp:
+management:
+  otlp:
+    tracing:
       endpoint: http://localhost:4317
-      protocol: grpc
-traces:
-  sampler:
-    probability: 1.0       
+  tracing:
+    sampling:
+      probability: 1.0
+
