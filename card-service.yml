@@ -8,6 +8,19 @@ eureka:
     service-url:
       defaultZone: ${SERVICE_REGISTERY_URL}
 
+spring:
+  datasource:
+    url: jdbc:h2:mem:cardsdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 test:
   value: hello
@@ -16,7 +29,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"   # expose all actuator endpoints
-  endpoint:
-    health:
-      show-details: always   # show full health details
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
