@@ -1,14 +1,9 @@
 server:
   port: 8081
 
-application:
-  name: card-service
-eureka:
-  client:
-    service-url:
-      defaultZone: ${SERVICE_REGISTERY_URL}
-
 spring:
+  application:
+    name: card-service
   datasource:
     url: jdbc:h2:mem:cardsdb
     driver-class-name: org.h2.Driver
@@ -22,14 +17,27 @@ spring:
       ddl-auto: update
     show-sql: true
 
-test:
-  value: hello
+eureka:
+  client:
+    service-url:
+      defaultZone: ${SERVICE_REGISTERY_URL:http://localhost:8761/eureka/}
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
   tracing:
     sampling:
       probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+
+logging:
+  pattern:
+    level: "%5p [%X{traceId:-},%X{spanId:-}]"
