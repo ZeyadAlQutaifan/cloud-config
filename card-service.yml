@@ -41,3 +41,8 @@ management:
 logging:
   pattern:
     level: "%5p [%X{traceId:-},%X{spanId:-}]"
+
+
+
+test:
+  value: hello
