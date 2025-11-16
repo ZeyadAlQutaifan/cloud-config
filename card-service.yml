@@ -45,4 +45,5 @@ logging:
 
 
 test:
+  nice: helllo
   value: blq
